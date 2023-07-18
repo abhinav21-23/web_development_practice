@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial</title>
+    <!-- Below is the format of external css -->
+    <link rel="stylesheet" href="demo8.css">
+    <!-- Below is the format of internal css -->
+    <!-- html gives mores priority to inline css than internal css -->
+    <!-- out of internal and external css the one which is written after is if high precedence -->
+    <style>
+        p{
+            color: green;
+            background-color: red !important;
+        }
+    </style>
+    <!-- !important is used to make the hihger precedence  -->
+</head>
+<body>
+    <h3>This is a CSS Tutorial</h3>
+    <!-- Below is the format of inline css -->
+    <!-- <p style="color: red; background-color: yellow;">This tutorial will help us to understand relation between HTML/CSS</p> -->
+    <p>This tutorial will help us to understand relation between HTML/CSS</p>
+</body>
+</html>
