@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 50vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .inp {
+            width: 20vw;
+            height: 3rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem;
+            border-radius: 25%;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .numbers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .btns {
+            display: flex;
+        }
+
+        .operators {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script>
+        let operator;
+        let firstNumber = 0;
+        let secondNumber = 0;
+        function numeral(x) {
+            document.f1.t.value = parseInt(x);
+        }
+        function add() {
+            if (document.f1.t.value != null) {
+                firstNumber = parseInt(document.f1.t.value);
+            }
+            operator = "+";
+            document.f1.t.value = "+";
+        }
+
+        function subtract() {
+            if (document.f1.t.value != null) {
+                firstNumber = parseInt(document.f1.t.value);
+            }
+            operator = "-";
+            document.f1.t.value = "-";
+        }
+
+        function product() {
+            if (document.f1.t.value != null) {
+                firstNumber = parseInt(document.f1.t.value);
+            }
+            operator = "*";
+            document.f1.t.value = "*";
+        }
+
+        function division() {
+            if (document.f1.t.value != null) {
+                firstNumber = parseInt(document.f1.t.value);
+            }
+            operator = "/";
+            document.f1.t.value = "/";
+        }
+
+        function equalTo() {
+            if (document.f1.t.value != null) {
+                secondNumber = parseInt(document.f1.t.value);
+            }
+
+            switch (operator) {
+                case "+":
+                    document.f1.t.value = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    document.f1.t.value = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    document.f1.t.value = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    document.f1.t.value = firstNumber / secondNumber;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f1">
+        <div class="container">
+            <input type="text" name="t" class="inp" readonly="true">
+            <div class="btns">
+                <div class="numbers">
+                    <div class="keypad">
+                        <input type="button" name="one" value="1" class="btn" onClick=numeral(1)>
+                        <input type="button" name="two" value="2" class="btn" onClick=numeral(2)>
+                        <input type="button" name="three" value="3" class="btn" onClick=numeral(3)>
+                        <input type="button" name="four" value="4" class="btn" onClick=numeral(4)>
+                        <input type="button" name="five" value="5" class="btn" onClick=numeral(5)>
+                        <input type="button" name="six" value="6" class="btn" onClick=numeral(6)>
+                        <input type="button" name="seven" value="7" class="btn" onClick=numeral(7)>
+                        <input type="button" name="eight" value="8" class="btn" onClick=numeral(8)>
+                        <input type="button" name="nine" value="9" class="btn" onClick=numeral(9)>
+                    </div>
+                    <input type="button" name="zero" value="0" class="btn" onClick=numeral(0)>
+                </div>
+                <div class="operators">
+                    <input type="button" value="+" class="btn" onClick=add()>
+                    <input type="button" value="-" class="btn" onClick=subtract()>
+                    <input type="button" value="*" class="btn" onClick=product()>
+                    <input type="button" value="/" class="btn" onClick=division()>
+                </div>
+                <input type="button" value="=" class="btn" onClick=equalTo()>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
